@@ -1,5 +1,5 @@
 {
-  "checksum": "7fee5bc8b5d9350dade65e361c2da9e58b1f20b4f84a06a324574ea0b9200fb8",
+  "checksum": "a423ce98de1586bcaf03ee5baa15302c9fed4f7bb3f0b63ba39b7af4b37a025e",
   "crates": {
     "adler2 2.0.1": {
       "name": "adler2",
@@ -1877,58 +1877,6 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "cargo_toml 0.22.3": {
-      "name": "cargo_toml",
-      "version": "0.22.3",
-      "package_url": "https://gitlab.com/lib.rs/cargo_toml",
-      "repository": {
-        "Http": {
-          "url": "https://static.crates.io/crates/cargo_toml/0.22.3/download",
-          "sha256": "374b7c592d9c00c1f4972ea58390ac6b18cbb6ab79011f3bdc90a0b82ca06b77"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "cargo_toml",
-            "crate_root": "src/cargo_toml.rs",
-            "srcs": {
-              "allow_empty": true,
-              "include": [
-                "**/*.rs"
-              ]
-            }
-          }
-        }
-      ],
-      "library_target_name": "cargo_toml",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "deps": {
-          "common": [
-            {
-              "id": "serde 1.0.228",
-              "target": "serde"
-            },
-            {
-              "id": "toml 0.9.8",
-              "target": "toml"
-            }
-          ],
-          "selects": {}
-        },
-        "edition": "2021",
-        "version": "0.22.3"
-      },
-      "license": "Apache-2.0 OR MIT",
-      "license_ids": [
-        "Apache-2.0",
-        "MIT"
-      ],
-      "license_file": "LICENSE"
-    },
     "cc 1.2.47": {
       "name": "cc",
       "version": "1.2.47",
@@ -2409,24 +2357,7 @@
         ],
         "data_glob": [
           "**"
-        ],
-        "deps": {
-          "common": [
-            {
-              "id": "cargo_toml 0.22.3",
-              "target": "cargo_toml"
-            },
-            {
-              "id": "prost-build 0.14.1",
-              "target": "prost_build"
-            },
-            {
-              "id": "toml 0.9.8",
-              "target": "toml"
-            }
-          ],
-          "selects": {}
-        }
+        ]
       },
       "license": "Apache-2.0",
       "license_ids": [
@@ -4754,14 +4685,14 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "deranged 0.5.5": {
+    "deranged 0.3.11": {
       "name": "deranged",
-      "version": "0.5.5",
+      "version": "0.3.11",
       "package_url": "https://github.com/jhpratt/deranged",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/deranged/0.5.5/download",
-          "sha256": "ececcb659e7ba858fb4f10388c250a7252eb0a27373f1a72b8748afdd248e587"
+          "url": "https://static.crates.io/crates/deranged/0.3.11/download",
+          "sha256": "b42b6fa04a440b495c8b04d0e71b707c585f83cb9cb28cf8cd0d976c315e31b4"
         }
       },
       "targets": [
@@ -4785,8 +4716,9 @@
         ],
         "crate_features": {
           "common": [
-            "default",
-            "powerfmt"
+            "alloc",
+            "powerfmt",
+            "std"
           ],
           "selects": {}
         },
@@ -4800,7 +4732,7 @@
           "selects": {}
         },
         "edition": "2021",
-        "version": "0.5.5"
+        "version": "0.3.11"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -5886,14 +5818,6 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": {
-          "common": [
-            "alloc",
-            "default",
-            "std"
-          ],
-          "selects": {}
-        },
         "edition": "2018",
         "version": "2.3.0"
       },
@@ -6206,45 +6130,6 @@
         ],
         "edition": "2018",
         "version": "0.1.5"
-      },
-      "license": "MIT OR Apache-2.0",
-      "license_ids": [
-        "Apache-2.0",
-        "MIT"
-      ],
-      "license_file": "LICENSE-APACHE"
-    },
-    "fixedbitset 0.5.7": {
-      "name": "fixedbitset",
-      "version": "0.5.7",
-      "package_url": "https://github.com/petgraph/fixedbitset",
-      "repository": {
-        "Http": {
-          "url": "https://static.crates.io/crates/fixedbitset/0.5.7/download",
-          "sha256": "1d674e81391d1e1ab681a28d99df07927c6d4aa5b027d7da16ba32d1d21ecd99"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "fixedbitset",
-            "crate_root": "src/lib.rs",
-            "srcs": {
-              "allow_empty": true,
-              "include": [
-                "**/*.rs"
-              ]
-            }
-          }
-        }
-      ],
-      "library_target_name": "fixedbitset",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "edition": "2021",
-        "version": "0.5.7"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -12144,45 +12029,6 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "multimap 0.10.1": {
-      "name": "multimap",
-      "version": "0.10.1",
-      "package_url": "https://github.com/havarnov/multimap",
-      "repository": {
-        "Http": {
-          "url": "https://static.crates.io/crates/multimap/0.10.1/download",
-          "sha256": "1d87ecb2933e8aeadb3e3a02b828fed80a7528047e68b4f424523a0981a3a084"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "multimap",
-            "crate_root": "src/lib.rs",
-            "srcs": {
-              "allow_empty": true,
-              "include": [
-                "**/*.rs"
-              ]
-            }
-          }
-        }
-      ],
-      "library_target_name": "multimap",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "edition": "2015",
-        "version": "0.10.1"
-      },
-      "license": "MIT OR Apache-2.0",
-      "license_ids": [
-        "Apache-2.0",
-        "MIT"
-      ],
-      "license_file": "LICENSE-APACHE"
-    },
     "native-tls 0.2.18": {
       "name": "native-tls",
       "version": "0.2.18",
@@ -12596,14 +12442,14 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "num-conv 0.2.0": {
+    "num-conv 0.1.0": {
       "name": "num-conv",
-      "version": "0.2.0",
+      "version": "0.1.0",
       "package_url": "https://github.com/jhpratt/num-conv",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/num-conv/0.2.0/download",
-          "sha256": "cf97ec579c3c42f953ef76dbf8d55ac91fb219dde70e49aa4a6b7d74e9919050"
+          "url": "https://static.crates.io/crates/num-conv/0.1.0/download",
+          "sha256": "51d515d32fb182ee37cda2ccdcb92950d6a3c2893aa280e540671c2cd0f3b1d9"
         }
       },
       "targets": [
@@ -12626,7 +12472,7 @@
           "**"
         ],
         "edition": "2021",
-        "version": "0.2.0"
+        "version": "0.1.0"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -14567,58 +14413,6 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "petgraph 0.7.1": {
-      "name": "petgraph",
-      "version": "0.7.1",
-      "package_url": "https://github.com/petgraph/petgraph",
-      "repository": {
-        "Http": {
-          "url": "https://static.crates.io/crates/petgraph/0.7.1/download",
-          "sha256": "3672b37090dbd86368a4145bc067582552b29c27377cad4e0a306c97f9bd7772"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "petgraph",
-            "crate_root": "src/lib.rs",
-            "srcs": {
-              "allow_empty": true,
-              "include": [
-                "**/*.rs"
-              ]
-            }
-          }
-        }
-      ],
-      "library_target_name": "petgraph",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "deps": {
-          "common": [
-            {
-              "id": "fixedbitset 0.5.7",
-              "target": "fixedbitset"
-            },
-            {
-              "id": "indexmap 2.12.1",
-              "target": "indexmap"
-            }
-          ],
-          "selects": {}
-        },
-        "edition": "2018",
-        "version": "0.7.1"
-      },
-      "license": "MIT OR Apache-2.0",
-      "license_ids": [
-        "Apache-2.0",
-        "MIT"
-      ],
-      "license_file": "LICENSE-APACHE"
-    },
     "pin-project 1.1.10": {
       "name": "pin-project",
       "version": "1.1.10",
@@ -15679,104 +15473,6 @@
       ],
       "license_file": "LICENSE"
     },
-    "prost-build 0.14.1": {
-      "name": "prost-build",
-      "version": "0.14.1",
-      "package_url": "https://github.com/tokio-rs/prost",
-      "repository": {
-        "Http": {
-          "url": "https://static.crates.io/crates/prost-build/0.14.1/download",
-          "sha256": "ac6c3320f9abac597dcbc668774ef006702672474aad53c6d596b62e487b40b1"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "prost_build",
-            "crate_root": "src/lib.rs",
-            "srcs": {
-              "allow_empty": true,
-              "include": [
-                "**/*.rs"
-              ]
-            }
-          }
-        }
-      ],
-      "library_target_name": "prost_build",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "crate_features": {
-          "common": [
-            "default",
-            "format"
-          ],
-          "selects": {}
-        },
-        "deps": {
-          "common": [
-            {
-              "id": "heck 0.5.0",
-              "target": "heck"
-            },
-            {
-              "id": "itertools 0.14.0",
-              "target": "itertools"
-            },
-            {
-              "id": "log 0.4.28",
-              "target": "log"
-            },
-            {
-              "id": "multimap 0.10.1",
-              "target": "multimap"
-            },
-            {
-              "id": "once_cell 1.21.3",
-              "target": "once_cell"
-            },
-            {
-              "id": "petgraph 0.7.1",
-              "target": "petgraph"
-            },
-            {
-              "id": "prettyplease 0.2.37",
-              "target": "prettyplease"
-            },
-            {
-              "id": "prost 0.14.1",
-              "target": "prost"
-            },
-            {
-              "id": "prost-types 0.14.1",
-              "target": "prost_types"
-            },
-            {
-              "id": "regex 1.12.2",
-              "target": "regex"
-            },
-            {
-              "id": "syn 2.0.110",
-              "target": "syn"
-            },
-            {
-              "id": "tempfile 3.23.0",
-              "target": "tempfile"
-            }
-          ],
-          "selects": {}
-        },
-        "edition": "2021",
-        "version": "0.14.1"
-      },
-      "license": "Apache-2.0",
-      "license_ids": [
-        "Apache-2.0"
-      ],
-      "license_file": "LICENSE"
-    },
     "prost-derive 0.14.1": {
       "name": "prost-derive",
       "version": "0.14.1",
@@ -15827,53 +15523,6 @@
             {
               "id": "syn 2.0.110",
               "target": "syn"
-            }
-          ],
-          "selects": {}
-        },
-        "edition": "2021",
-        "version": "0.14.1"
-      },
-      "license": "Apache-2.0",
-      "license_ids": [
-        "Apache-2.0"
-      ],
-      "license_file": "LICENSE"
-    },
-    "prost-types 0.14.1": {
-      "name": "prost-types",
-      "version": "0.14.1",
-      "package_url": "https://github.com/tokio-rs/prost",
-      "repository": {
-        "Http": {
-          "url": "https://static.crates.io/crates/prost-types/0.14.1/download",
-          "sha256": "b9b4db3d6da204ed77bb26ba83b6122a73aeb2e87e25fbf7ad2e84c4ccbf8f72"
-        }
-      },
-      "targets": [
-        {
-          "Library": {
-            "crate_name": "prost_types",
-            "crate_root": "src/lib.rs",
-            "srcs": {
-              "allow_empty": true,
-              "include": [
-                "**/*.rs"
-              ]
-            }
-          }
-        }
-      ],
-      "library_target_name": "prost_types",
-      "common_attrs": {
-        "compile_data_glob": [
-          "**"
-        ],
-        "deps": {
-          "common": [
-            {
-              "id": "prost 0.14.1",
-              "target": "prost"
             }
           ],
           "selects": {}
@@ -17424,7 +17073,6 @@
         "crate_features": {
           "common": [
             "alloc",
-            "default",
             "fs",
             "std"
           ],
@@ -19532,7 +19180,7 @@
               "target": "thiserror"
             },
             {
-              "id": "time 0.3.47",
+              "id": "time 0.3.36",
               "target": "time"
             }
           ],
@@ -20614,22 +20262,11 @@
         "compile_data_glob": [
           "**"
         ],
-        "crate_features": {
-          "common": [
-            "default",
-            "getrandom"
-          ],
-          "selects": {}
-        },
         "deps": {
           "common": [
             {
               "id": "fastrand 2.3.0",
               "target": "fastrand"
-            },
-            {
-              "id": "getrandom 0.3.4",
-              "target": "getrandom"
             },
             {
               "id": "once_cell 1.21.3",
@@ -21026,14 +20663,14 @@
       ],
       "license_file": "LICENSE-APACHE"
     },
-    "time 0.3.47": {
+    "time 0.3.36": {
       "name": "time",
-      "version": "0.3.47",
+      "version": "0.3.36",
       "package_url": "https://github.com/time-rs/time",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/time/0.3.47/download",
-          "sha256": "743bd48c283afc0388f9b8827b976905fb217ad9e647fae3a379a9283c4def2c"
+          "url": "https://static.crates.io/crates/time/0.3.36/download",
+          "sha256": "5dfd88e563464686c916c7e46e623e520ddc6d79fa6641390f2e3fa86e83e885"
         }
       },
       "targets": [
@@ -21068,7 +20705,7 @@
         "deps": {
           "common": [
             {
-              "id": "deranged 0.5.5",
+              "id": "deranged 0.3.11",
               "target": "deranged"
             },
             {
@@ -21076,7 +20713,7 @@
               "target": "itoa"
             },
             {
-              "id": "num-conv 0.2.0",
+              "id": "num-conv 0.1.0",
               "target": "num_conv"
             },
             {
@@ -21084,23 +20721,23 @@
               "target": "powerfmt"
             },
             {
-              "id": "time-core 0.1.8",
+              "id": "time-core 0.1.2",
               "target": "time_core"
             }
           ],
           "selects": {}
         },
-        "edition": "2024",
+        "edition": "2021",
         "proc_macro_deps": {
           "common": [
             {
-              "id": "time-macros 0.2.27",
+              "id": "time-macros 0.2.18",
               "target": "time_macros"
             }
           ],
           "selects": {}
         },
-        "version": "0.3.47"
+        "version": "0.3.36"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -21109,14 +20746,14 @@
       ],
       "license_file": "LICENSE-Apache"
     },
-    "time-core 0.1.8": {
+    "time-core 0.1.2": {
       "name": "time-core",
-      "version": "0.1.8",
+      "version": "0.1.2",
       "package_url": "https://github.com/time-rs/time",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/time-core/0.1.8/download",
-          "sha256": "7694e1cfe791f8d31026952abf09c69ca6f6fa4e1a1229e18988f06a04a12dca"
+          "url": "https://static.crates.io/crates/time-core/0.1.2/download",
+          "sha256": "ef927ca75afb808a4d64dd374f00a2adf8d0fcff8e7b184af886c3c87ec4a3f3"
         }
       },
       "targets": [
@@ -21138,8 +20775,8 @@
         "compile_data_glob": [
           "**"
         ],
-        "edition": "2024",
-        "version": "0.1.8"
+        "edition": "2021",
+        "version": "0.1.2"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -21148,14 +20785,14 @@
       ],
       "license_file": "LICENSE-Apache"
     },
-    "time-macros 0.2.27": {
+    "time-macros 0.2.18": {
       "name": "time-macros",
-      "version": "0.2.27",
+      "version": "0.2.18",
       "package_url": "https://github.com/time-rs/time",
       "repository": {
         "Http": {
-          "url": "https://static.crates.io/crates/time-macros/0.2.27/download",
-          "sha256": "2e70e4c5a0e0a8a4823ad65dfe1a6930e4f4d756dcd9dd7939022b5e8c501215"
+          "url": "https://static.crates.io/crates/time-macros/0.2.18/download",
+          "sha256": "3f252a68540fde3a3877aeea552b832b40ab9a69e318efd078774a01ddee1ccf"
         }
       },
       "targets": [
@@ -21187,18 +20824,18 @@
         "deps": {
           "common": [
             {
-              "id": "num-conv 0.2.0",
+              "id": "num-conv 0.1.0",
               "target": "num_conv"
             },
             {
-              "id": "time-core 0.1.8",
+              "id": "time-core 0.1.2",
               "target": "time_core"
             }
           ],
           "selects": {}
         },
-        "edition": "2024",
-        "version": "0.2.27"
+        "edition": "2021",
+        "version": "0.2.18"
       },
       "license": "MIT OR Apache-2.0",
       "license_ids": [
@@ -22852,7 +22489,7 @@
               "target": "thiserror"
             },
             {
-              "id": "time 0.3.47",
+              "id": "time 0.3.36",
               "target": "time"
             },
             {
@@ -27874,7 +27511,6 @@
     "bindgen 0.72.1",
     "bytes 1.11.1",
     "bzip2 0.6.1",
-    "cargo_toml 0.22.3",
     "cc 1.2.47",
     "chrono 0.4.43",
     "clap 4.5.52",
@@ -27908,7 +27544,6 @@
     "parking_lot 0.12.5",
     "percent-encoding 2.3.2",
     "prost 0.14.1",
-    "prost-build 0.14.1",
     "regex 1.12.2",
     "reqwest 0.12.28",
     "rustversion 1.0.22",
