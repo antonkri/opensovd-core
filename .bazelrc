@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 The Contributors to Eclipse OpenSOVD (see CONTRIBUTORS)
+
+# Generated Bazel configuration -- keep in sync with .bazelrc if you add one
+build --incompatible_enable_cc_toolchain_resolution
+build --action_env=CARGO_BAZEL_ISOLATED=1

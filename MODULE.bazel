@@ -1,0 +1,90 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 The Contributors to Eclipse OpenSOVD (see CONTRIBUTORS)
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0
+
+module(
+    name = "opensovd_cda",
+    version = "0.1.0",
+    compatibility_level = 0,
+)
+
+# ---------------------------------------------------------------------------
+# Core Bazel rules
+# ---------------------------------------------------------------------------
+bazel_dep(name = "platforms", version = "1.0.0")
+bazel_dep(name = "rules_cc", version = "0.2.16")
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+
+# ---------------------------------------------------------------------------
+# rules_rust  (eclipse-score fork -- same pin used by reference_integration)
+# ---------------------------------------------------------------------------
+bazel_dep(name = "rules_rust", version = "0.68.1")
+
+git_override(
+    module_name = "rules_rust",
+    commit = "293337fd6402ec3dfbeb8f2d589f38ad9124dadd",
+    remote = "https://github.com/pawelrutkaq/rules_rust.git",  # TODO: replace once in score bazel registry
+)
+
+# ---------------------------------------------------------------------------
+# Rust toolchain  (minimum requirement: 1.88.0)
+# ---------------------------------------------------------------------------
+rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
+
+rust.toolchain(
+    edition = "2024",
+    versions = ["1.95.0"],
+)
+
+use_repo(rust, "rust_toolchains")
+
+register_toolchains("@rust_toolchains//:all")
+
+# ---------------------------------------------------------------------------
+# crate_universe: resolve all external Cargo dependencies.
+#
+# Usage after cloning / updating Cargo.lock:
+#   CARGO_BAZEL_REPIN=1 bazel build //...
+#
+# The `cargo-bazel-lock.json` file must exist (can be empty JSON `{}`).
+# Run the above command once to populate it, then commit it.
+# ---------------------------------------------------------------------------
+crate = use_extension("@rules_rust//crate_universe:extensions.bzl", "crate")
+
+crate.from_cargo(
+    name = "cda_crates",
+    cargo_lockfile = "//:Cargo.lock",
+    lockfile = "//:cargo-bazel-lock.json",
+    # List the workspace root; crate_universe discovers all [workspace] members.
+    manifests = [
+        "//:Cargo.toml",
+        "//cda-build:Cargo.toml",
+        "//cda-comm-doip:Cargo.toml",
+        "//cda-comm-uds:Cargo.toml",
+        "//cda-core:Cargo.toml",
+        "//cda-database:Cargo.toml",
+        "//cda-health:Cargo.toml",
+        "//cda-interfaces:Cargo.toml",
+        "//cda-main:Cargo.toml",
+        "//cda-plugin-security:Cargo.toml",
+        "//cda-sovd:Cargo.toml",
+        "//cda-sovd-interfaces:Cargo.toml",
+        "//cda-tracing:Cargo.toml",
+        "//comm-mbedtls/mbedtls-rs:Cargo.toml",
+        "//comm-mbedtls/mbedtls-sys:Cargo.toml",
+        "//:integration-tests/Cargo.toml",
+    ],
+    # Build CDA with the same default features as Cargo.
+    supported_platform_triples = [
+        "x86_64-unknown-linux-gnu",
+        "aarch64-unknown-linux-gnu",
+    ],
+)
+
+use_repo(crate, "cda_crates")
