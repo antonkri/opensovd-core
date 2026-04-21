@@ -74,7 +74,6 @@ mime = { workspace = true }
 reqwest = { workspace = true }
 
 [build-dependencies]
-chrono = { workspace = true }
 
 [features]
 default = ["health", "openssl"]

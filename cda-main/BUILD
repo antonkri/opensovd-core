@@ -34,9 +34,7 @@ cargo_build_script(
         # expose it as a data dep when present so incremental builds work.
     ],
     edition = "2024",
-    deps = all_crate_deps(build = True) + [
-        "@cda_crates//:chrono",
-    ],
+    deps = all_crate_deps(build = True),
 )
 
 # Library target (used by integration-tests crate)
