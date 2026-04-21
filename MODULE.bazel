@@ -17,6 +17,7 @@ module(
 # ---------------------------------------------------------------------------
 # Core Bazel rules
 # ---------------------------------------------------------------------------
+bazel_dep(name = "score_crates", version = "0.0.7")
 bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "rules_cc", version = "0.2.16")
 bazel_dep(name = "bazel_skylib", version = "1.7.1")

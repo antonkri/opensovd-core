@@ -71,10 +71,10 @@ fn schema_find_recursive<'a>(
         if k == key {
             return Some(v);
         }
-        if let Some(nested_obj) = v.as_object()
-            && let Some(found) = schema_find_recursive(nested_obj, key)
-        {
-            return Some(found);
+        if let Some(nested_obj) = v.as_object() {
+            if let Some(found) = schema_find_recursive(nested_obj, key) {
+                return Some(found);
+            }
         }
     }
     None

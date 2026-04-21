@@ -225,7 +225,7 @@ pub fn decode_hex(value: &str) -> Result<Vec<u8>, DiagServiceError> {
             "Non-hex character found".to_owned(),
         ));
     }
-    let value = if value.len().is_multiple_of(2) {
+    let value = if value.len() % 2 == 0 {
         value
     } else {
         &format!(
