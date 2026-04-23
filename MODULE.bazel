@@ -9,7 +9,7 @@
 # https://www.apache.org/licenses/LICENSE-2.0
 
 module(
-    name = "opensovd_cda",
+    name = "score_opensovd_cda",
     version = "0.1.0",
     compatibility_level = 0,
 )
