@@ -44,7 +44,7 @@ rust_library(
     aliases = aliases(),
     crate_features = [
         "health",
-        "openssl",
+        # "openssl",
     ],
     crate_name = "opensovd_cda_lib",
     edition = "2024",
@@ -74,7 +74,7 @@ rust_binary(
     aliases = aliases(),
     crate_features = [
         "health",
-        "openssl",
+        # "openssl",
     ],
     crate_name = "opensovd_cda",
     edition = "2024",

@@ -12,7 +12,7 @@ cargo_build_script(
     crate_features = [
         # Default: openssl (not mbedtls).  Build script just emits a warning if
         # both are active, which they are not in the default configuration.
-        "openssl",
+        # "openssl",
     ],
     crate_name = "build_script_build",
     edition = "2024",
